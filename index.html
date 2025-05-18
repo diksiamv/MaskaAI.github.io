@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Чат-бот с анонимизацией</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+  </script>
+</head>
+<body>
+
+  <img id="theme-toggle" src="img/—Pngtree—vector sun icon_3782198 (1).png" alt="Сменить тему" />
+
+  <div id="chat-container">
+    <div id="chat-header">
+      <img src="img/logo.png" alt="Логотип" id="logo" />
+    </div>
+    <div id="chat-messages"></div>
+
+    <div id="anonymize-options">
+      <label><input type="checkbox" value="iin" checked /> ИИН</label>
+      <label><input type="checkbox" value="name" checked /> Имя</label>
+      <label><input type="checkbox" value="phone" checked /> Телефон</label>
+      <label><input type="checkbox" value="card" checked /> Карта</label>
+      <label><input type="checkbox" value="cvv" checked /> CVV</label>
+    </div>
+
+    <div id="chat-controls">
+      <input type="text" id="chat-input" placeholder="Введите сообщение..." autofocus />
+      <label id="file-label">
+        📎
+        <input type="file" id="file-input" accept=".jpg,.jpeg,.png,.pdf" hidden />
+      </label>
+      <button id="chat-send">Отправить</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
